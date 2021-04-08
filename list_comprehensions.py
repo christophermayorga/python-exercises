@@ -18,15 +18,11 @@ for fruit in fruits:
     output.append(fruit.upper())
     
 # Exercise 1 - rewrite the above example code using list comprehension syntax. Make a variable named uppercased_fruits to hold the output of the list comprehension. Output should be ['MANGO', 'KIWI', etc...]
-uppercased_fruits = []
-for fruit in fruits:
-    uppercased_fruits.append(fruit.upper())
-uppercased_fruits
+uppercased_fruits = [fruit.upper() for fruit in fruits]
+
 # Exercise 2 - create a variable named capitalized_fruits and use list comprehension syntax to produce output like ['Mango', 'Kiwi', 'Strawberry', etc...]
-capitalized_fruits = []
-for fruit in fruits:
-    capitalized_fruits.append(fruit.title())
-capitalized_fruits
+capitalized_fruits = [fruit.title() for fruit in fruits]
+
 # Exercise 3 - Use a list comprehension to make a variable named fruits_with_more_than_two_vowels. Hint: You'll need a way to check if something is a vowel.
 def count_vowels(x):
     count = 0
@@ -47,7 +43,7 @@ def count_vowels(x):
 [fruit for fruit in fruits if len(fruit) == 5]
 
 # Exercise 7 - Make a list that contains fruits that have less than 5 characters
-[fruit for fruit in fruits if len(fruit) < 5]
+[fruit for fruit in fruits if len(fruit) <= 4]
 
 # Exercise 8 - Make a list containing the number of characters in each fruit. Output would be [5, 4, 10, etc... ]
 [len(fruit) for fruit in fruits]
