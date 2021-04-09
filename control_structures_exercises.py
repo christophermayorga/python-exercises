@@ -101,4 +101,76 @@ posited_num = int(posited_num)
 for num in range(0, posited_num + 1):
     print(num)
 
-    
+#2e
+while True:
+    posited_num = input('Please insert a positive integer: ')
+    if posited_num.isdigit():
+        if int(posited_num) > 0:
+            break
+posited_num = int(posited_num)        
+for num in range(posited_num, 0, -1):
+    print(num)
+
+#3
+for i in range(1, 101):
+    if i % 3 == 0 and i % 5 == 0:
+        print('Fizzbuzz')
+    elif i % 3 == 0:
+        print('Fizz')
+    elif i % 5 == 0:
+        print('Buzz')
+    else:
+        print(i)
+
+#4
+while True:
+    posited_num = input('Please insert a positive integer: ')
+    if posited_num.isdigit():
+        if int(posited_num) > 0:
+            break
+proceed = input('Do you want to continue and print a table of powers? :')
+if proceed.lower().startswith('y'):
+    posited_num = int(posited_num)
+    print()
+    print('number  |  squared  |  cubed')
+    print('------  |  -------  |  -----')
+    for i in range(1, posited_num + 1):
+        i_squared = i ** 2
+        i_cubed = i ** 3
+        print(f'{i: 6}  |  {i_squared: 7}  |  {i_cubed: 5}')
+
+#5
+while True:
+    user_number = input("Please enter a numerical between 0 and 100")
+    if user_number.isdigit():
+        user_number - int(user_number)
+        if user_number < 0 or user_number > 100:
+            continue
+        break
+
+if grade in range(60):
+    grade = 'F'
+elif grade in range(60,67):
+    grade = 'D'
+elif grade in range(67,80):
+    grade = 'C'
+elif grade in range(80,88):
+    grade = 'B'
+else:
+    grade = 'A'
+
+#6
+for book in bookshelf:
+    [print(key,': ', book[key]) for key in book]
+    print('---------')
+
+picked_genre = input('Please pick a genre and I will return the titles we have on the shelf: ')
+
+matches = []
+for book in bookshelf:
+    if book['genre'].lower() == picked.genre.lower():
+        matches.append(book['title'])
+if matches == []:
+    print("No books in that genre right now. Please check back later!")
+else:
+    print(f'I have the following titles in the genre {picked_genre}')
