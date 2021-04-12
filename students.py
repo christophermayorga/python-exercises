@@ -249,15 +249,13 @@ print('The least common preferences for the web development are',
     leastcommonwd1, 'and', leastcommonwd2)
 
 #What is the average grade for students with at least 2 pets?
-at_least_two_pets = []
+grades_total = 0
+number_grades = 0
 for student in students:
-    if len(student['pets']) >= 2:
-        at_least_two_pets.append(student)
-    else:
-        continue
-for student in at_least_two_pets:
-    avg_grade = mean(student['grades'])
-    print(f"{student['student']}'s average grade is {avg_grade}")
+    if len(student['pets']) > 1:
+        grades_total += sum(student['grades'])
+        number_grades += len(student['grades'])
+print('The average grade for students with at least 2 pets is:', (grades_total / number_grades))
 
 #How many students have 3 pets?
 have_three_pets = []
@@ -267,15 +265,13 @@ for student in students:
 print(len(have_three_pets), 'student has three pets.')
 
 #What is the average grade for students with 0 pets?
-has_no_pets = []
+grades_total = 0
+number_grades = 0
 for student in students:
     if len(student['pets']) == 0:
-        has_no_pets.append(student)
-    else:
-        continue
-for student in has_no_pets:
-    avg_grade = mean(student['grades'])
-    print(f"{student['student']}'s average grade is {avg_grade}")
+        grades_total += sum(student['grades'])
+        number_grades += len(student['grades'])
+print('The average grade for students with at 0 pets is:', (grades_total / number_grades))
 
 #What is the average grade for web development students? data science students?
 web_dev_students = []

@@ -1,13 +1,15 @@
 #prompt the user for a day of the week, print out whether the day is Monday or not
-
+day_of_week = ''
 day_of_week = input('Please input a day of week: ')
-if day_of_week.lower ==  'monday':
+if day_of_week.lower() ==  'monday':
     print('That\'s Monday')
 else:
     print('That\'s not Monday')
 
 #prompt the user for a day of the week, print out whether the day is a weekday or a weekend
-if day_of_week.lower.startswith('s'):
+day_of_week = ''
+day_of_week = input('Input a day of week: ')
+if day_of_week.lower().startswith('s'):
     print('weekend')
 else:
     print('weekday')
@@ -24,8 +26,12 @@ hourly_rate = 20
 paycheck = 0
 if hours_worked <= 40:
     paycheck = hours_worked * hourly_rate
+    print(paycheck)
+if hours_worked > 40:
+    paycheck = (40 * hourly_rate) + ((hours_worked - 40) * (hourly_rate * 1.5))
+    print(paycheck)
 else:
-    paycheck = hourly_rate * (((hours_worked - 40) * 1.5) + 40)
+    pass
 
 #While
 
@@ -143,11 +149,12 @@ if proceed.lower().startswith('y'):
 while True:
     user_number = input("Please enter a numerical between 0 and 100")
     if user_number.isdigit():
-        user_number - int(user_number)
+        user_number = int(user_number)
         if user_number < 0 or user_number > 100:
             continue
         break
 
+grade = user_number
 if grade in range(60):
     grade = 'F'
 elif grade in range(60,67):
@@ -160,6 +167,21 @@ else:
     grade = 'A'
 
 #6
+bookshelf = [
+    {'title': 'The Lightning Thief',
+    'author': 'Rick Riordan',
+    'genre': 'fantasy adventure'},
+    {'title': 'Parable of the Sower',
+    'author': 'Octavia Butler',
+    'genre': 'science fiction'},
+    {'title': 'The Hunger Games',
+    'author': 'Suzanne Collins',
+    'genre': 'young adult dystopian'},
+    {'title': 'Divergent',
+    'author': 'Veronica Roth',
+    'genre': 'young adult dystopian'}
+]
+
 for book in bookshelf:
     [print(key,': ', book[key]) for key in book]
     print('---------')
@@ -168,7 +190,7 @@ picked_genre = input('Please pick a genre and I will return the titles we have o
 
 matches = []
 for book in bookshelf:
-    if book['genre'].lower() == picked.genre.lower():
+    if book['genre'].lower() == picked_genre.lower():
         matches.append(book['title'])
 if matches == []:
     print("No books in that genre right now. Please check back later!")
